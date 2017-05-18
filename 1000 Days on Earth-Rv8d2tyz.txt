@@ -1,0 +1,18 @@
+package com.company;
+
+import java.util.Scanner;
+import java.time.format.*;
+import java.time.LocalDate;
+
+public class date1 {
+
+        public static void main(String[] agruments) {
+            Scanner input = new Scanner(System.in);
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+            String text = input.nextLine();
+            LocalDate parsedDate = LocalDate.parse(text, formatter);
+            LocalDate after1K = parsedDate.plusDays(999);
+            System.out.println(after1K.format(formatter));
+
+        }
+}
