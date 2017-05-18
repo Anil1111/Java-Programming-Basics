@@ -1,0 +1,45 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        int lectures = Integer.parseInt(input.nextLine());
+
+        double budget = Double.parseDouble(input.nextLine());
+        double Roli = 0;
+        double Trofon = 0;
+        double Sino = 0;
+        double Jelev = 0;
+        double RoYaL = 0;
+        double BaiIvanIvanov = 0;
+        double lecturesSalary = (budget / lectures);
+
+        for (int i = 0; i < lectures; i++) {
+            String lecturesNames = input.nextLine();
+            if (lecturesNames.equalsIgnoreCase("Roli")) {
+                Roli++;
+            } else if (lecturesNames.equalsIgnoreCase("Trofon")) {
+                Trofon++;
+            } else if (lecturesNames.equalsIgnoreCase("Sino")) {
+                Sino++;
+            } else if (lecturesNames.equalsIgnoreCase("Jelev")) {
+                Jelev++;
+            } else if (lecturesNames.equalsIgnoreCase("RoYaL")) {
+                RoYaL++;
+            } else if (lecturesNames != "Jelev" && lecturesNames != "RoYaL" && lecturesNames != "Roli" && lecturesNames != "Trofon" 
+                    && lecturesNames != "Sino") {
+                BaiIvanIvanov++;
+            }
+         }
+
+        System.out.printf("Jelev salary: %.2f lv%n", lecturesSalary * Jelev );
+        System.out.printf("RoYaL salary: %.2f lv%n", lecturesSalary * RoYaL);
+        System.out.printf("Roli salary: %.2f lv%n", lecturesSalary * Roli);
+        System.out.printf("Trofon salary: %.2f lv%n", lecturesSalary * Trofon);
+        System.out.printf("Sino salary: %.2f lv%n", lecturesSalary * Sino);
+        System.out.printf("Others salary: %.2f lv%n", lecturesSalary * BaiIvanIvanov);
+
+    }
+
+}

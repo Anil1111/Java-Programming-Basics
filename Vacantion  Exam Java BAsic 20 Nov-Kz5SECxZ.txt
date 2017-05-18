@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class FOX {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int oldPeople = Integer.parseInt(input.nextLine());
+        int students = Integer.parseInt(input.nextLine());
+        int nights = Integer.parseInt(input.nextLine());
+        String transport = input.nextLine();
+
+        double oldPeopleTransportPrice = 0;
+        double studentsTransportPrice = 0;
+
+        if (transport.equals("train")) {
+            oldPeopleTransportPrice = 24.99;
+        } else if (transport.equals("airplane")) {
+            oldPeopleTransportPrice = 70.00;
+        } else if (transport.equals("boat")) {
+            oldPeopleTransportPrice = 42.99;
+        } else if (transport.equals("bus")) {
+            oldPeopleTransportPrice = 32.50;
+        }
+        if (transport.equals("train")) {
+            studentsTransportPrice = 14.99;
+        } else if (transport.equals("airplane")) {
+            studentsTransportPrice = 50.00;
+        } else if (transport.equals("boat")) {
+            studentsTransportPrice = 39.99;
+        } else if (transport.equals("bus")) {
+            studentsTransportPrice = 28.50;
+        }
+
+        if (oldPeople + students >= 50 & transport.equals("train")) {
+            studentsTransportPrice = studentsTransportPrice / 2;
+            oldPeopleTransportPrice = oldPeopleTransportPrice / 2;
+        }
+
+        double hotelNight = 82.99;
+        double transportTaxes = ((oldPeople * oldPeopleTransportPrice) + (students * studentsTransportPrice)) * 2;
+        double hotelTax = nights * hotelNight;
+        double commission = (transportTaxes + hotelTax) * 0.10;
+        double total = transportTaxes + hotelTax + commission;
+
+
+
+        System.out.printf("%.2f", total);
+    }
+}

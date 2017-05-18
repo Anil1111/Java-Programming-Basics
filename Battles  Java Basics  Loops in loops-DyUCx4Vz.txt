@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class FOX {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+       int playerOnePokemons = Integer.parseInt(input.nextLine());
+       int playerTwoPokemons = Integer.parseInt(input.nextLine());
+       int maximumFights = Integer.parseInt(input.nextLine());
+       int count = 0;
+
+        for (int i = 1; i <= playerOnePokemons; i++) {
+            for (int j = 1; j <= playerTwoPokemons; j++) {
+                count++;
+                if (count > maximumFights) {
+                   break;
+                }
+                System.out.printf("(%d <-> %d) ", i, j );
+            }
+        }
+    }
+}

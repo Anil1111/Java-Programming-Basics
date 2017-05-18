@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        double skumriqPrice = Double.parseDouble(input.nextLine());
+        double cacaPrice = Double.parseDouble(input.nextLine());
+        double palamudKilos = Double.parseDouble(input.nextLine());
+        double safridKilos = Double.parseDouble(input.nextLine());
+        int midiKilos  = Integer.parseInt(input.nextLine());
+
+        double palamudRealPrice = skumriqPrice + skumriqPrice * 0.60;
+        double safridPrice = cacaPrice + cacaPrice * 0.80;
+        double midiPrice = 7.50;
+
+        double totalPrice = (midiKilos * midiPrice) + (safridKilos * safridPrice) + (palamudRealPrice * palamudKilos);
+        System.out.printf("%.2f", totalPrice);
+
+
+
+
+
+
+        
+
+    }
+}

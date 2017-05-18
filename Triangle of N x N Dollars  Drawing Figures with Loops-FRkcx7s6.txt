@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int dollars = Integer.parseInt(input.nextLine());
+
+        for (int row = 0; row < dollars; row++) {
+            System.out.print("$");
+            System.out.println(repeatStr(" $", row));
+
+        }
+    }
+    public static String repeatStr(String str, int count) {
+        StringBuilder dollars = new StringBuilder();
+        for (int i = 0; i < count; i++) {
+            dollars.append(str);
+        }
+        return dollars.toString();
+    }
+}

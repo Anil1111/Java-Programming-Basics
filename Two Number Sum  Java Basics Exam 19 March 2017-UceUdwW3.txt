@@ -1,0 +1,28 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        int startInterval = Integer.parseInt(input.nextLine());
+        int endInterval = Integer.parseInt(input.nextLine());
+        int magicNumber = Integer.parseInt(input.nextLine());
+
+        int combination = 0;
+
+        for (int i = startInterval; i >= endInterval ; i--) {
+            for (int j = startInterval; j >= endInterval ; j--) {
+                combination++;
+                if (i + j == magicNumber) {
+                    System.out.printf("Combination N:%d (%d + %d = %d)", combination, i, j, magicNumber);
+                    return;
+                }
+            }
+        }
+        System.out.printf("%d combinations - neither equals %d", combination, magicNumber);
+    }
+}

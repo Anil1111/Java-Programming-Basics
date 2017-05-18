@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class FOX {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        int n = Integer.parseInt(input.nextLine());
+
+        for (int i = 0; i < n * 2; i++) {
+            System.out.println(repeatString(".", ((12 * n - 5) / 2) - i * 3) + repeatString("#", 1 + (i * 6)) + repeatString(".", ((12 * n - 5) / 2) - i * 3));
+        }
+        for (int i = 0; i < n - 2; i++) {
+            System.out.println("|" + repeatString(".", 2 + i * 3) + repeatString("#", (12 * n - 11) - i * 6) + repeatString(".", 3 + i * 3));
+        }
+        for (int i = 3; i <= n + 1; i++) {
+            System.out.println("|" + repeatString(".", 2 + (n - 2) * 3) + repeatString("#", (12 * n - 11) - (n - 2) * 6) + repeatString(".", 3 + (n - 2) * 3));
+        }
+        System.out.println("@" + repeatString(".", 2 + (n - 2) * 3) + repeatString("#", (12 * n - 11) - (n - 2) * 6) + repeatString(".", 3 + (n - 2) * 3));
+
+
+    }
+    public static String repeatString(String str, int counter) {
+        String text = "";
+        for (int i = 0; i < counter; i++) {
+            text += str;
+        }
+        return text;
+    }
+ }

@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class FOX {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        int startNum = Integer.parseInt(input.nextLine());
+        int endNum = Integer.parseInt(input.nextLine());
+        int maxComb = Integer.parseInt(input.nextLine());
+        int counter = 0;
+
+        for (int i = startNum; i <= endNum; i++) {
+            for (int j = startNum; j <= endNum; j++) {
+                counter++;
+                if (counter > maxComb) {
+                    break;
+                }
+                System.out.printf("<%s-%s>", i, j);
+            }
+        }
+    }
+}

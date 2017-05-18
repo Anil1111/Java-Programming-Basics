@@ -1,0 +1,28 @@
+package com.company;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        int n = Integer.parseInt(input.nextLine());
+
+        System.out.println(repeatString(".", (n * 2) - 1) + "/|\\" + repeatString(".", (n * 2) - 1));
+        System.out.println(repeatString(".", (n * 2) - 1) + "\\|/" + repeatString(".", (n * 2) - 1));
+
+        for (int i = 0; i < n * 2; i++) {
+            System.out.println(repeatString(".", ((n * 2) - 1) - i) + "*" + repeatString("-", i) + "*" +
+                    repeatString("-", i) + "*" + repeatString(".", ((n * 2) - 1) - i));
+        }
+        System.out.println(repeatString("*", 4 * n + 1));
+        System.out.println(repeatString("*.", n * 2) + "*");
+        System.out.println(repeatString("*", 4 * n + 1));
+    }
+    public static String repeatString(String str, int counter) {
+        String text = "";
+        for (int i = 0; i < counter; i++) {
+            text += str;
+        }
+        return text;
+    }
+}

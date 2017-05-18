@@ -1,0 +1,23 @@
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        int n = Integer.parseInt(input.nextLine());
+            n--;
+        for (int i = 0; i <= n; i++) {
+            System.out.println(repeatStr(" ", (n - i)) + "*" + repeatStr(" *",i));
+        }
+        for (int i = 0; i <= n - 1; i++ ) {
+            System.out.println(repeatStr(" ", i + 1) + "*" + repeatStr(" *", (n - i) - 1));
+        }
+    }
+   public static String repeatStr(String repeatText, int counter) {
+        String text = "";
+       for (int i = 0; i < counter ; i++) {
+           text += repeatText;
+       }
+       return text;
+   }
+}

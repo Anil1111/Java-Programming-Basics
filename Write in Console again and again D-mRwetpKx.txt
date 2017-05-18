@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        long longer = Long.MAX_VALUE;
+
+        for (int i = 0; i < longer; i++) {
+            String text = input.nextLine().trim();
+            System.out.println(text);
+            if (text.equalsIgnoreCase("close")) {
+                break;
+            } else if (text.equalsIgnoreCase("out")) {
+                break;
+            }else if (text.equalsIgnoreCase("break")) {
+                break;
+            }
+        }
+    }
+}

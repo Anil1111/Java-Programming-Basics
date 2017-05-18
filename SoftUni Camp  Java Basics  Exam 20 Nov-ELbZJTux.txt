@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class FOX {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int howManyGroupsAre = Integer.parseInt(input.nextLine());
+
+        int car = 0;
+        int microbus = 0;
+        int smallBus = 0;
+        int bigBus = 0;
+        int train = 0;
+
+        for (int i = 0; i < howManyGroupsAre; i++) {
+
+            int currentNumber = Integer.parseInt(input.nextLine());
+
+            if (currentNumber >= 1 & currentNumber <= 5) {
+                car += currentNumber;
+            } else if (currentNumber >= 6 & currentNumber <= 12) {
+                microbus += currentNumber;
+            } else if (currentNumber >= 13 & currentNumber <= 25) {
+                smallBus += currentNumber;
+            } else if (currentNumber >= 26 & currentNumber <= 40) {
+                bigBus += currentNumber;
+            } else if (currentNumber >= 41) {
+                train += currentNumber;
+            }
+        }
+
+        int allStudents = car + microbus + smallBus + bigBus + train;
+
+        System.out.printf("%.2f%%%n",(double) car/allStudents*100);
+        System.out.printf("%.2f%%%n",(double) microbus/allStudents*100);
+        System.out.printf("%.2f%%%n",(double) smallBus/allStudents*100);
+        System.out.printf("%.2f%%%n",(double) bigBus/allStudents*100);
+        System.out.printf("%.2f%%%n",(double) train/allStudents*100);
+
+    }
+}

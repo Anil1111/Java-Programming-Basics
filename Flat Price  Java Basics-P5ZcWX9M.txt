@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class FOX {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double smallestRoomSpace = Double.parseDouble(input.nextLine());
+        double kitchenSpace = Double.parseDouble(input.nextLine());
+        double kvPrice = Double.parseDouble(input.nextLine());
+        double bathroomSpace = smallestRoomSpace / 2;
+        double secondRoomSpace = smallestRoomSpace + (smallestRoomSpace * 0.10);
+        double thurdRoomSpace = secondRoomSpace + (secondRoomSpace * 0.10);
+        double flatSpace = smallestRoomSpace + kitchenSpace + bathroomSpace + secondRoomSpace + thurdRoomSpace;
+        double calculations = flatSpace - (flatSpace * 0.05);
+        double antre = flatSpace - calculations;
+        double totalFlatSpace = flatSpace + antre;
+        double price = totalFlatSpace * kvPrice;
+        System.out.printf("%.2f", price);
+    }
+}

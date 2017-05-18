@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class FOX {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+      char firstChar = input.nextLine().charAt(0);
+      char secondChar = input.nextLine().charAt(0);
+      char thurdChar = input.nextLine().charAt(0);
+      int counter = 0;
+
+        for (char i = firstChar; i <= secondChar ; i++) {
+            for (char j = firstChar; j <= secondChar; j++) {
+                for (char k = firstChar; k <= secondChar; k++) {
+                    if (!(i == thurdChar || j == thurdChar || k == thurdChar)) {
+                        counter++;
+                        System.out.printf("%s%s%s ", i, j, k);
+                    }
+                }
+            }
+        }
+        System.out.println(counter);
+    }
+}

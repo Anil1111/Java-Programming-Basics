@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        int n = Integer.parseInt(input.nextLine());
+
+        if (n % 2 == 0) {
+             for (int i = 0; i < (n + 1) / 2 ; i++) {            // OK!
+                                                                 // OK!
+                System.out.println(repeatStr("-", ((n / 2) - 1) - i)
+                        + repeatStr("*", 2 + (i * 2))
+                        + repeatStr("-", ((n / 2) - 1) - i));
+                }
+                                                                 // OK1
+            for (int j = 0; j < n / 2 ; j++) {
+                System.out.println("|" + repeatStr("*", n - 2) + "|");
+            }
+        }
+        if (!(n % 2 == 0)) {
+            for (int i = 0; i < (n + 1) / 2; i++) {
+                System.out.println(repeatStr("-", (n / 2) - i) + repeatStr("*", 1 + (i * 2)) + repeatStr("-", (n / 2)- i));
+            }
+            for (int i = 0; i < n / 2; i++) {
+                System.out.println("|" + repeatStr("*", n - 2) + "|");
+            }
+        }
+    }
+   public static String repeatStr(String repeatText, int counter) {
+        String text = "";
+       for (int i = 0; i < counter ; i++) {
+           text += repeatText;
+       }
+       return text;
+   }
+}

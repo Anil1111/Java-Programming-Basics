@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class FOX {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int tovarCounter = Integer.parseInt(input.nextLine());
+
+        double microbus = 0; // 200lv ton
+        double truck = 0;   // 175lv ton
+        double train = 0;   // 120lv ton
+
+        for (int i = 0; i < tovarCounter; i++) {
+            int currentHeight = Integer.parseInt(input.nextLine());
+            if (currentHeight <= 3 & currentHeight >= 1) {
+                microbus += currentHeight;
+            } else if (currentHeight >= 4 & currentHeight <= 11) {
+                truck += currentHeight;
+            } else if (currentHeight >= 12) {
+                train += currentHeight;
+            }
+        }
+        double totalHeight = microbus + truck + train;
+        double microbusTax = microbus * 200;
+        double truckTax = truck * 175;
+        double trainTax = train * 120;
+        double sredenTonaj = (trainTax + truckTax + microbusTax) /  totalHeight;
+        System.out.printf("%.2f%n", sredenTonaj);
+        System.out.printf("%.2f%%%n",microbus/totalHeight*100);
+        System.out.printf("%.2f%%%n",truck/totalHeight*100);
+        System.out.printf("%.2f%%%n",train/totalHeight*100);
+    }
+}

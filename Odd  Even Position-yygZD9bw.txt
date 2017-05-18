@@ -1,0 +1,60 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = Integer.parseInt(scanner.nextLine());
+        double oddSum = 0;
+        double oddMin = 1000000000.0;
+        double oddMax = -1000000000.0;
+        double evenSum = 0;
+        double evenMin =  1000000000.0;
+        double evenMax = -1000000000.0;
+
+        for (int i = 0; i < n; i++) {
+            double number = Double.parseDouble(scanner.nextLine());
+            //odds first
+            if (i % 2 == 0) {
+                oddSum += number;
+                if (number < oddMin) {
+                    oddMin = number;
+                }
+                if (number > oddMax) {
+                    oddMax = number;
+                }
+            } else {
+                evenSum += number;
+                if (number < evenMin) {
+                    evenMin = number;
+                }
+                if (number > evenMax) {
+                    evenMax = number;
+                }
+            }
+        }
+        DecimalFormat formatter = new DecimalFormat();
+        formatter.setDecimalSeparatorAlwaysShown(false);
+        System.out.println("OddSum=" + formatter.format(oddSum) + ",");
+        if (oddMin == 1000000000.0) {
+            System.out.println("OddMin=No,");
+        } else {
+            System.out.println("OddMin=" + formatter.format(oddMin) + ",");
+        }
+        if (oddMax == -1000000000.0) {
+            System.out.println("OddMax=No,");
+        } else {
+            System.out.println("OddMax=" + formatter.format(oddMax) + ",");
+        }
+        System.out.println("EvenSum=" +formatter.format(evenSum) + ",");
+        if (evenMin == 1000000000.0) {
+            System.out.println("EvenMin=No,");
+        } else {
+            System.out.println("EvenMin=" + formatter.format(evenMin) + ",");
+        }
+        if (evenMax == -1000000000.0) {
+            System.out.println("EvenMax=No");
+        } else {
+            System.out.println("EvenMax=" + formatter.format(evenMax));
+        }
+    }
+}

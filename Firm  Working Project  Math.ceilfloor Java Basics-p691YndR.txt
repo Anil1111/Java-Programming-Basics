@@ -1,0 +1,25 @@
+package com.company;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        int neededWorkingHours = Integer.parseInt(input.nextLine());
+        int daysForTheProject = Integer.parseInt(input.nextLine());
+        int overtimeWorkingMan = Integer.parseInt(input.nextLine());
+
+        double educationTime = daysForTheProject * 0.10;
+        double timeForTheProject = daysForTheProject - educationTime;
+        double hoursForWork = timeForTheProject * 8;
+        double overtimeWorkingHours = overtimeWorkingMan * (2 *daysForTheProject);
+        double totalHours = overtimeWorkingHours + hoursForWork;
+
+        double diff = totalHours - neededWorkingHours;
+        if (diff >= 0) {
+            System.out.printf("Yes!%d hours left.", (int) Math.floor(diff));
+        } else if (diff < 0) {
+            System.out.printf("Not enough time!%d hours needed.", (int) Math.abs(Math.floor(diff)));
+        }
+    }
+}

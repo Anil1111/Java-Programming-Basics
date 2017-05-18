@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class FOX {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+    int neededHours = Integer.parseInt(input.nextLine());
+    int workersCount = Integer.parseInt(input.nextLine());
+    int workingDays = Integer.parseInt(input.nextLine());
+
+    int manWorkingHours = (workingDays * workersCount) * 8;
+    int diff = Math.abs(neededHours - manWorkingHours);
+    int penalties = diff * workingDays;
+
+    if (manWorkingHours >= neededHours) {
+        System.out.printf("%d hours left", diff);
+    }
+
+
+
+    if (manWorkingHours < neededHours) {
+        System.out.printf("%d overtime%n", diff);
+        System.out.printf("Penalties: %d", penalties);
+    }
+    }
+ }

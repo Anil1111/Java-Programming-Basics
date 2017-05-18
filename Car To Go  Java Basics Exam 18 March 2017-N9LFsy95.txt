@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class FOX {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        double budget = Double.parseDouble(input.nextLine());
+        String season = input.nextLine();
+
+        String carClass = null;
+        String carType = null;
+
+        double percOfThePrice = 0;
+
+        if (budget <= 100 && season.equals("Summer")) {
+            carClass = "Economy class";
+            carType = "Cabrio";
+            percOfThePrice = budget * 0.35;
+        }
+        if (budget <= 100 && season.equals("Winter")) {
+            carClass = "Economy class";
+            carType = "Jeep";
+            percOfThePrice = budget * 0.65;
+        }
+        if (budget > 100 && budget <= 500 && season.equals("Summer")) {
+            carClass = "Compact class";
+            carType = "Cabrio";
+            percOfThePrice = budget * 0.45;
+        }
+        if (budget > 100 && budget <= 500 && season.equals("Winter")) {
+            carClass = "Compact class";
+            carType = "Jeep";
+            percOfThePrice = budget * 0.80;
+        }
+        if (budget > 500 && season.equals("Summer")) {
+            carClass = "Luxury class";
+            carType = "Cabrio";
+            percOfThePrice = budget * 0.90;
+        }
+        if (budget > 500 && season.equals("Winter")) {
+            carClass = "Luxury class";
+            carType = "Jeep";
+            percOfThePrice = budget * 0.90;
+        }
+        System.out.printf("%s%n", carClass);
+        System.out.printf("%s - %.2f", carType, percOfThePrice);
+    }
+ }

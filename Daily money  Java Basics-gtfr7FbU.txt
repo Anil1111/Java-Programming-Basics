@@ -1,0 +1,21 @@
+package com.company;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+       double daysOfMonth = Double.parseDouble(input.nextLine());
+       double moneyForTheDay = Double.parseDouble(input.nextLine());
+       double dollarValue = Double.parseDouble(input.nextLine());
+
+       double moneyForMonth = daysOfMonth * moneyForTheDay;
+       double moneyForYear = moneyForMonth * 12 + moneyForMonth * 2.5;
+       double govermentTax = moneyForYear * 0.25;
+       double clearMoney = moneyForYear - govermentTax;
+       double payForADay = clearMoney / 365;
+       double fromUSDtoLv = payForADay * dollarValue;
+
+        System.out.printf("%.2f", fromUSDtoLv);
+    }
+}

@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class FOX {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        double magnolia = 3.25;
+        double zombiuli = 4.00;
+        double rosses = 3.50;
+        double cactuses = 8.00;
+
+        int magnoliAsk = Integer.parseInt(input.nextLine());
+        int zombiuliAsk = Integer.parseInt(input.nextLine());
+        int rossesAsk = Integer.parseInt(input.nextLine());
+        int cactusesAsk = Integer.parseInt(input.nextLine());
+        double presentPrice = Double.parseDouble(input.nextLine());
+
+        double totalAsk = (magnoliAsk * magnolia) + (zombiuli * zombiuliAsk) + (rosses * rossesAsk) + (cactuses * cactusesAsk);
+
+        double dds = totalAsk - (totalAsk * 0.05);
+        double danuci = totalAsk - dds;
+        double clearMoney = totalAsk - danuci;
+
+        double diff = (presentPrice - clearMoney);
+        double check = 0;
+
+        if (clearMoney < presentPrice) {
+            System.out.printf("She will have to borrow %.0f leva.", (Math.ceil(diff)));
+        } else {
+            check = diff;
+            System.out.printf("She is left with %.0f leva.", Math.abs(Math.ceil(check)));
+        }
+    }
+}

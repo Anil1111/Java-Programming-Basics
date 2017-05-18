@@ -1,0 +1,43 @@
+package com.company;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        String month = input.nextLine();
+        int nights = Integer.parseInt(input.nextLine());
+
+        double studio = 0;
+        double flat = 0;
+        double totalPriceStudio = 0;
+        double totalPriceFlat = 0;
+
+        if (month.equals("May") || month.equals("October")) {
+            studio = 50;
+            flat = 65;
+        } else if (month.equals("June") || month.equals("September")) {
+            studio = 75.20;
+            flat = 68.70;
+        } else if (month.equals("July") || (month.equals("August"))) {
+            studio = 76;
+            flat = 77;
+        }
+
+        totalPriceStudio = nights * studio;
+        totalPriceFlat = nights * flat;
+
+        if ((nights > 7 && nights < 14) && (month.equals("May") || month.equals("October"))) {
+            totalPriceStudio -= totalPriceStudio * 0.05;
+        } else if ((nights > 14) && (month.equals("May") || month.equals("October"))) {
+            totalPriceStudio -= totalPriceStudio * 0.30;
+        } else if ((nights > 14) && (month.equals("June") || month.equals("September"))) {
+            totalPriceStudio -= totalPriceStudio * 0.20;
+        }
+        if (nights > 14 & (month.equals("July") || (month.equals("August") || (month.equals("May") || month.equals("October") || (month.equals("June") || month.equals("September")))))) {
+            totalPriceFlat -= totalPriceFlat * 0.10;
+        }
+        System.out.printf("Apartment: %.2f lv.%n", totalPriceFlat);
+        System.out.printf("Studio: %.2f lv.", totalPriceStudio);
+    }
+}

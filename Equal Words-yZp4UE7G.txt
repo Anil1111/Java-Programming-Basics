@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String firstWord = input.nextLine();
+        String secondWord = input.nextLine();
+        if (firstWord.equalsIgnoreCase(secondWord)) {
+            System.out.println("Yes");
+        } else {
+            System.out.println("No");
+        }
+    }
+}
